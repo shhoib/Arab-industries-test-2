@@ -5,13 +5,14 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-cards';
 import './slider.css'
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow,Autoplay, Pagination,Navigation } from 'swiper/modules';
 
 import image1 from '../assets/images/car1.jpg'
 import image2 from '../assets/images/car2.jpg'
 import image3 from '../assets/images/car3.jpg'
 import image4 from '../assets/images/car4.jpg'
 import image5 from '../assets/images/car5.jpg'
+
 
 
 const Slider = () => {
@@ -24,6 +25,10 @@ const Slider = () => {
       grabCursor={true}
       centeredSlides={true}
       slidesPerView={'auto'}
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+      }}
       coverflowEffect={{
         rotate: 50,
         stretch: 0,
@@ -31,9 +36,12 @@ const Slider = () => {
         modifier: 1,
         slideShadows: true,
       }}
-      pagination={true}
-      modules={[EffectCoverflow, Pagination]}
-      className="mySwiper"
+      pagination={{
+        clickable: true,
+      }}
+      navigation={true}
+      modules={[EffectCoverflow,Autoplay, Pagination,Navigation]}
+      className="mySwiper swiper-container"
     >
       <SwiperSlide>
         <img src={image1} />
